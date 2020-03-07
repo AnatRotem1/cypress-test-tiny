@@ -20,7 +20,8 @@ describe('page', () => {
     cy.get('.TreeNodeExpandIcon > .SvgIcon').click()
     cy.get('[data-testid=TreeSelection__node-header-node4] > .TreeNode').click()
     cy.get('.DropdownTree__input-text > span').should('contain', 'Node 1 > Node 4') //Verifies that the node selected is displayed in the text bar
-    cy.get('.DropdownTree').click()        
+    cy.get('.DropdownTree').click()   
+    cy.get('.TreeNode > [data-testid=TreeSelection__selected-node]').should('have.length', 1) //Verifies only one node was chosen. there is a bug so will fail
     })
 
 
